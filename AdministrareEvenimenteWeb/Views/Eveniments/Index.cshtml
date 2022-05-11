@@ -1,0 +1,54 @@
+﻿@model IEnumerable<AdministrareEvenimenteWeb.Models.Eveniment>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeEveniment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataOraInceperii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataOraIncheierii)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdClientNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeEveniment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataOraInceperii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataOraIncheierii)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdClientNavigation.IdClient)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdEveniment">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdEveniment">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdEveniment">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

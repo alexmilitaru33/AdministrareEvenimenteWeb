@@ -1,0 +1,49 @@
+﻿@model AdministrareEvenimenteWeb.Models.LocatieEveniment
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>LocatieEveniment</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NumeLocatie)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NumeLocatie)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Judet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Judet)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Localitate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Localitate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Strada)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Strada)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Numar)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Numar)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdLocatieEveniment">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

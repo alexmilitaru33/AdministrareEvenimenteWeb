@@ -1,0 +1,50 @@
+﻿@model AdministrareEvenimenteWeb.Models.Sediu
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Sediu</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdSediu" />
+            <div class="form-group">
+                <label asp-for="Judet" class="control-label"></label>
+                <input asp-for="Judet" class="form-control" />
+                <span asp-validation-for="Judet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Localitate" class="control-label"></label>
+                <input asp-for="Localitate" class="form-control" />
+                <span asp-validation-for="Localitate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Strada" class="control-label"></label>
+                <input asp-for="Strada" class="form-control" />
+                <span asp-validation-for="Strada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numar" class="control-label"></label>
+                <input asp-for="Numar" class="form-control" />
+                <span asp-validation-for="Numar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
